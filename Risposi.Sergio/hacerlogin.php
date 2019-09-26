@@ -2,7 +2,7 @@
 
 $checkUsuario = $_GET['Nombre'];
 $checkPassword = $_GET['Apellido'];
-$Bandera=1;
+$Bandera=0;
 
 
 $archivo = fopen("listadoregistro.txt", "r");
@@ -24,7 +24,7 @@ while(!feof($archivo))
 		
 	}	
 
-if($Bandera=0)
+if($Bandera==0)
 	{	
 		header("Location: OK.php");
 		exit();
