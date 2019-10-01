@@ -51,10 +51,10 @@
    	<h1>Patente</h1>
       <form action="hacerlogin.php">
         Vehiculo:<br>
-        <input type="text" name="Vehiculo" value="">
+        <input type="text" name="Vehiculo" value="Vehiculo">
         <br>
         Date:<br>
-        <input type="text" name="Date" value="">
+        <input type="text" name="Date" value="Date">
         <br><br>
         <input type="submit" value="Submit">
       </form>

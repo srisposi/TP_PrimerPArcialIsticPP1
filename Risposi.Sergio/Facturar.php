@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="mario.ico">
+    <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Sticky Footer Navbar Template for Bootstrap</title>
+    <title>Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Sergio Risposi</a>
+        <a class="navbar-brand" href="index.php">Sergio Risposi</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,6 +48,16 @@
     <!-- Begin page content -->
     <main role="main" class="container">
       
+   	<h1>Facturar</h1>
+      <form action="hacerlogin.php">
+        Patente:<br>
+        <input type="text" name="Nombre" value="">
+        <br>
+        Date:<br>
+        <input type="text" name="Apellido" value="">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
     </main>
 
     <footer class="footer">
