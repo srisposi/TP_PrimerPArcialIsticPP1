@@ -47,8 +47,12 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1> Exito. Gracias por venir a este estacionamiento <br><br>
-      Su saldo a pagar es de $pasopago</h1>
+      <h1> Exito. Gracias por venir a este estacionamiento <br><br></h1> 
+      <?php
+
+      var_dump($_GET);
+      //echo "Su saldo a pagar es". $_GET;
+      ?>
 
     </main>
 

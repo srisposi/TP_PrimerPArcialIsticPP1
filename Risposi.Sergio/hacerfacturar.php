@@ -1,7 +1,7 @@
 <?php
 
 $precio = 100;	
-$Bandera = 0;
+$Bandera = 1;
 	
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 $horaSalida = mktime(); 
@@ -16,7 +16,7 @@ while(!feof($archivo))
 	{
 		$objeto = json_decode(fgets($archivo));
 
-		if ($objeto->Vehiculo == $checkPatente) 
+		if ($objeto->Patente == $checkPatente) 
 		{
 							 	
 			{
@@ -32,10 +32,12 @@ while(!feof($archivo))
 
 if($Bandera==0)
 	{	
-		$diff=($objeto->Date - $horaSalida);
+		$diff=($horaSalida-$objeto->$Date);
 		$pago=$precio*$diff;
-		$pasoPago = jason_encode($pago);
-		header("Location: Exito.php");
+		
+		header("Location: Exito.php?pago=". $pago);
+
+
 		exit();
 	}
 	else 

@@ -51,7 +51,7 @@
    	<h1>Facturar</h1>
       <form action="hacerfacturar.php">
         Patente:<br>
-        <input type="text" name="Nombre" value="">
+        <input type="text" name="Patente" value="">
        
         <br><br>
         <input type="submit" value="Submit">
