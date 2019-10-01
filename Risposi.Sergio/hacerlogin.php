@@ -2,7 +2,7 @@
 
 $checkUsuario = $_GET['Nombre'];
 $checkPassword = $_GET['Apellido'];
-$Bandera=0;
+$Bandera=1;
 
 
 $archivo = fopen("listadoregistro.txt", "r");

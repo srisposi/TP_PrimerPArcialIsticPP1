@@ -1,9 +1,16 @@
 <?php
 $MiObjeto=new stdClass();
-$MiObjeto->Nombre=$_GET['Vehiculo'];
-$MiObjeto->Apellido=$_GET['Date'];
 
-$archivo = fopen("listadopatente.txt", "a");
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+$horaIngreso = mktime();
+
+$MiObjeto->Patente=$_GET['Vehiculo'];
+//$MiObjeto->Date=$horaIngreso
+
+
+
+
+$archivo = fopen('listadopatente.txt', 'a');
 fwrite($archivo,json_encode($MiObjeto)."\n");
 fclose($archivo);
 ?>

@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Patente</title>
+    <title>Sticky Footer Navbar Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
@@ -21,14 +21,14 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index.php">Sergio Risposi</a>
+        <a class="navbar-brand" href="#">ERROR</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="Registro.php"> Registro <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="Registro.php">Registro <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Login.php">Login</a>
@@ -47,16 +47,7 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      
-   	<h1>Patente</h1>
-      <form action="hacerpatente.php">
-        Vehiculo:<br>
-        <input type="text" name="Vehiculo" value="">
-        <br>
-
-        <br><br>
-        <input type="submit" value="Submit">
-      </form>
+    <h1>Error, datos mal ingresados</h1> 
     </main>
 
     <footer class="footer">

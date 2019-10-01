@@ -1,50 +1,49 @@
 <?php
 
-	$precioFraccion = 100;	
-	$contadorFraccion = 0;
-	$borrar = false;
+$precio = 100;	
+$Bandera = 0;
 	
-	date_default_timezone_set('America/Argentina/Buenos_Aires');
-	$horaSalida = mktime(); 
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+$horaSalida = mktime(); 
 
-	$checkPatente = $_GET['Patente'];
+$checkPatente = $_GET['Patente'];
 
-	
-		while(!feof($archivo)) 
+
+
+
+$archivo = fopen("listadopatente.txt", "r");
+while(!feof($archivo)) 
+	{
+		$objeto = json_decode(fgets($archivo));
+
+		if ($objeto->Vehiculo == $checkPatente) 
 		{
-			$objeto = json_decode(fgets($archivo));
-
-			$objetoPatente = $objeto->patente;
-			$horaEntrada = $objeto->horaIngreso;
-
-			if ($objetoPatente == $checkPatente) 
-			{	
-				$borrar = true;
-				$diffSegundos = $horaSalida - $horaEntrada;
-				$diffAlternativo = $diffSegundos;
-
-				while ($diffAlternativo >= 3600) 
-				{			
-					if ($diffAlternativo >= 3600) 
-					{
-						$contadorFraccion++;
-						$diffAlternativo = $diffAlternativo - 3600;
-					}
-					else if ($diffAlternativo >= 1800)
-					{
-						$contadorFraccion++;
-					}					
-				}
-				$resultado = $contadorFraccion * $precioFraccion;
-				header("Location: ../facturarVehiculo.php?cobrar=".$resultado."&ingreso=".$horaEntrada."&salida=".$horaSalida);
-				fclose($archivo);
-				exit();
-			}
-			else
+							 	
 			{
-				header("Location: ../facturarVehiculo.php?error=patentenoexiste");
+				$Bandera=0;
+				
+			
 			}
-      	}
 
+		}
+			
+		
 	}	
+
+if($Bandera==0)
+	{	
+		$diff=($objeto->Date - $horaSalida);
+		$pago=$precio*$diff;
+		$pasoPago = jason_encode($pago);
+		header("Location: Exito.php");
+		exit();
+	}
+	else 
+	{
+
+		header("Location: Error.php");
+		exit();
+				 	
+	}
+fclose($archivo);
 ?>

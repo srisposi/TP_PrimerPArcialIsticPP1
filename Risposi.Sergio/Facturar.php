@@ -49,12 +49,10 @@
     <main role="main" class="container">
       
    	<h1>Facturar</h1>
-      <form action="hacerlogin.php">
+      <form action="hacerfacturar.php">
         Patente:<br>
         <input type="text" name="Nombre" value="">
-        <br>
-        Date:<br>
-        <input type="text" name="Apellido" value="">
+       
         <br><br>
         <input type="submit" value="Submit">
       </form>
