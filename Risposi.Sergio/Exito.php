@@ -50,7 +50,8 @@
       <h1> Exito. Gracias por venir a este estacionamiento <br><br></h1> 
       <?php
 
-      var_dump($_GET);
+      //var_dump($_GET);
+      echo "Debe pagar".$_GET['pago'];
       //echo "Su saldo a pagar es". $_GET;
       ?>
 

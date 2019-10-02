@@ -12,40 +12,46 @@ $checkPatente = $_GET['Patente'];
 
 
 $archivo = fopen("listadopatente.txt", "r");
+
 while(!feof($archivo)) 
 	{
 		$objeto = json_decode(fgets($archivo));
-
+//echo "<br>";
+var_dump($objeto);
+//echo "<br>";
+var_dump($checkPatente);
 		if ($objeto->Patente == $checkPatente) 
 		{
 							 	
 			{
 				$Bandera=0;
-				
+				//echo "<br>es:";
+				//var_dump($objeto);
+				$diff=($horaSalida-$objeto->fechaIngreso);
+				$pago=$precio*$diff;
+				//var_dump($horaSalida);
+				//var_dump($objeto->fechaIngreso);				
+				//die();
+				//header("Location: Exito.php?fechaIngreso=".$objeto->fechaIngreso);
+				header("Location: Exito.php?pago=".$pago);
+				exit();
 			
 			}
 
 		}
-			
-		
-	}	
-
-if($Bandera==0)
-	{	
-		$diff=($horaSalida-$objeto->$Date);
-		$pago=$precio*$diff;
-		
-		header("Location: Exito.php?pago=". $pago);
 
 
-		exit();
 	}
-	else 
-	{
 
-		header("Location: Error.php");
-		exit();
-				 	
-	}
+if($Bandera==1)
+{
+	//die();
+	header("Location: Error.php");
+	exit();		
+	
+}
+
+
+
 fclose($archivo);
 ?>

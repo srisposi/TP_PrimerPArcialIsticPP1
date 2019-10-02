@@ -5,8 +5,9 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
 $horaIngreso = mktime();
 
 $MiObjeto->Patente=$_GET['Vehiculo'];
-//$MiObjeto->Date=$horaIngreso
-
+$MiObjeto->fechaIngreso=$horaIngreso;
+var_dump($MiObjeto);
+//die();
 
 
 

@@ -1,6 +1,6 @@
-{"Patente":"1234"}
-{"Patente":"123"}
-{"Patente":"444"}
-{"Patente":"12"}
-{"Patente":"5"}
-{"Patente":"34"}
+{"Patente":"333","fechaIngreso":1569974628}
+{"Patente":"122","fechaIngreso":1569974769}
+{"Patente":"444","fechaIngreso":1569975045}
+{"Patente":"122","fechaIngreso":1569975233}
+{"Patente":"444","fechaIngreso":1569976781}{"Patente":"444","fechaIngreso":1569978270}
+{"Patente":"211","fechaIngreso":1569978637}
