@@ -45,9 +45,29 @@ var_dump($checkPatente);
 
 if($Bandera==1)
 {
+
+
+	date_default_timezone_set('America/Argentina/Buenos_Aires');
+
+	$objetoFacturado=new stdClass();
+
+	$objetoFacturado->patenteFacturada = $checkPatente;
+       $objetoFacturado->fechaEntrada = date("d-m-y H:i",$objeto->fechaIngreso);
+       $objetoFacturado->fechaSalida = date("d-m-y H:i",$horaSalida);
+       $objetoFacturado->importe = $pago;
+
+
+
+
+	$archivo1 = fopen('facturados.txt', 'a');
+       fwrite($archivo1, json_encode($objetoFacturado)."\n");
+       fclose($archivo1);		
+
 	//die();
 	header("Location: Error.php");
-	exit();		
+	exit();
+
+
 	
 }
 
