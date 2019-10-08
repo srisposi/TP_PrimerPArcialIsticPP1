@@ -1,0 +1,2 @@
+{"patenteFacturada":"sd","fechaEntrada":"08-10-19 19:29","fechaSalida":"08-10-19 19:43","importe":null}
+{"patenteFacturada":"sd","fechaEntrada":"08-10-19 19:29","fechaSalida":"08-10-19 19:44","importe":88000}
