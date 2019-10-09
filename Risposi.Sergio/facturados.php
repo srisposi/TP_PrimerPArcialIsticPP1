@@ -56,16 +56,21 @@
     <h1>Facturados</h1>
     <ol>
       <?php
+      //var_dump($objeto); llego
       $archivo = fopen("facturados.txt","r");
       while(!feof($archivo))
-
+      //var_dump($objeto); llego 
       {
-        $obejto=json_decode(fgets($archivo));
+
+        $objeto=json_decode(fgets($archivo));
+        //var_dump($objeto);
         if(isset($objeto))
-        {  
+        {
+          //var_dump($obejto);
+
      
            echo"<li>"; 
-           echo"Patente: ". $objeto->patenteFacturada.  "FechaAlta: ".$objeto->fechaEntrada."FechaBaja: ".$objeto->fechaSalida. "Pago: ".$objeto->importe; 
+           echo"Patente: ". $objeto->patenteFacturada. "<br>". "FechaAlta: ".$objeto->fechaEntrada."<br>"."FechaBaja: ".$objeto->fechaSalida. "<br>". "Pago: ".$objeto->importe; 
            echo"</li>";
 
           /*echo "<li>FechaAlta" . "......." . $objeto->fechaEntrada 
