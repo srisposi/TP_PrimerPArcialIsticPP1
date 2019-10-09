@@ -40,7 +40,7 @@
               <a class="nav-link disabled" href="Facturar.php">Facturar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="Factudos.php">Facturados</a>
+              <a class="nav-link disabled" href="facturados.php">Facturados</a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">

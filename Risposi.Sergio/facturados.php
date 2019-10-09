@@ -54,14 +54,46 @@
     <!-- Begin page content -->
     <main role="main" class="container">
     <h1>Facturados</h1>
-    <?php
-    $archivo = fopen("facturados.txt","r");
-    while(!feof($archivo))
-    {
-      $obejto=jason_decode(fgets($archivo));
-      echo "<li>Usuario: ".$objeto->usuario." <br>Contraseña: ".$objeto->password."</li>";
-    }
+    <ol>
+      <?php
+      $archivo = fopen("facturados.txt","r");
+      while(!feof($archivo))
+      {
+        $obejto=json_decode(fgets($archivo));
+        if(isset($objeto))
+        {  
+     
+          echo "<li>";
+          echo "Patente: ",$objeto->patenteFacturada; 
+          echo"</li>";
 
+          echo "<li>";
+          echo "FechaAlta: ",$objeto->fechaEntrada; 
+          echo"</li>";
+          
+          echo "<li>";
+          echo "FechaBaja: ",$objeto->fechaSalida; 
+          echo"</li>";
+
+          echo "<li>";
+          echo "Pago: ",$objeto->importe; 
+          echo"</li>";
+
+          /*echo "<li>FechaAlta" . "......." . $objeto->fechaEntrada 
+          "</li>";
+          echo "<li>FechaSalida" . "......." . $objeto->fechaSalida "</li>";
+          echo "<li>Pago" ."......." .$objeto->importe"</li>";*/
+       
+        }
+        else
+         {
+          continue;
+         } 
+      } 
+      fclose($archivo);
+
+      ?>
+    </ol>  
     </main>
 
     <footer class="footer">
