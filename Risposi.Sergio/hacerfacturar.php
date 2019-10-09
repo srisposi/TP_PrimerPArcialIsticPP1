@@ -20,50 +20,58 @@ while(!feof($archivo))
 var_dump($objeto);
 //echo "<br>";
 var_dump($checkPatente);
-		if ($objeto->Patente == $checkPatente) 
+		if(isset($objeto))
 		{
-							 	
+			if ($objeto->Patente == $checkPatente) 
 			{
-				$Bandera=0;
+							 	
+				{
+					$Bandera=0;
 				
 
 
-			    //echo "<br>es:";
-				//var_dump($objeto);
-				$diff=($horaSalida-$objeto->fechaIngreso);
-				$pago=$precio*$diff;
+				    //echo "<br>es:";
+					//var_dump($objeto);
+					$diff=($horaSalida-$objeto->fechaIngreso);
+					$pago=$precio*$diff;
 
 
 
-				date_default_timezone_set('America/Argentina/Buenos_Aires');
+					date_default_timezone_set('America/Argentina/Buenos_Aires');
 
-				$objetoFacturado=new stdClass();
+					$objetoFacturado=new stdClass();
 
-				$objetoFacturado->patenteFacturada = $checkPatente;
-			    $objetoFacturado->fechaEntrada = date("d-m-y H:i",$objeto->fechaIngreso);
-			    $objetoFacturado->fechaSalida = date("d-m-y H:i",$horaSalida);
-			    $objetoFacturado->importe = $pago;
-
-
-
-
-				$archivo1 = fopen('facturados.txt', 'a');
-			       fwrite($archivo1, json_encode($objetoFacturado)."\n");
-			       fclose($archivo1);
+					$objetoFacturado->patenteFacturada = $checkPatente;
+				    $objetoFacturado->fechaEntrada = date("d-m-y H:i",$objeto->fechaIngreso);
+				    $objetoFacturado->fechaSalida = date("d-m-y H:i",$horaSalida);
+				    $objetoFacturado->importe = $pago;
 
 
 
-				//var_dump($horaSalida);
-				//var_dump($objeto->fechaIngreso);				
-				//die();
-				//header("Location: Exito.php?fechaIngreso=".$objeto->fechaIngreso);
-				header("Location: Exito.php?pago=".$pago);
-				exit();
 
+					$archivo1 = fopen('facturados.txt', 'a');
+				       fwrite($archivo1, json_encode($objetoFacturado)."\n");
+				       fclose($archivo1);
+
+
+
+					//var_dump($horaSalida);
+					//var_dump($objeto->fechaIngreso);				
+					//die();
+					//header("Location: Exito.php?fechaIngreso=".$objeto->fechaIngreso);
+					header("Location: Exito.php?pago=".$pago);
+					exit();
+				}
+					
 						
 			}
 
 		}
+		else
+		{
+			continue;
+		}	
+
 
 
 	}

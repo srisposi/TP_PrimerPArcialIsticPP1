@@ -53,7 +53,15 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      
+    <h1>Facturados</h1>
+    <?php
+    $archivo = fopen("facturados.txt","r");
+    while(!feof($archivo))
+    {
+      $obejto=jason_decode(fgets($archivo));
+      echo "<li>Usuario: ".$objeto->usuario." <br>Contraseña: ".$objeto->password."</li>";
+    }
+
     </main>
 
     <footer class="footer">
