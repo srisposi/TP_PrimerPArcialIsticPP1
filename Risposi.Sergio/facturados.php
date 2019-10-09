@@ -56,6 +56,7 @@
     <h1>Facturados</h1>
     <ol>
       <?php
+      $facturadototal=0;
       //var_dump($objeto); llego
       $archivo = fopen("facturados.txt","r");
       while(!feof($archivo))
@@ -68,7 +69,7 @@
         {
           //var_dump($obejto);
 
-     
+          $facturadototal=$facturadototal+$objeto->importe;
            echo"<li>"; 
            echo"Patente: ". $objeto->patenteFacturada. "<br>". "FechaAlta: ".$objeto->fechaEntrada."<br>"."FechaBaja: ".$objeto->fechaSalida. "<br>". "Pago: ".$objeto->importe; 
            echo"</li>";
@@ -80,6 +81,8 @@
        
           } 
       } 
+
+      echo "<br>". "FacturadoTotal: ", "......", $facturadototal;
       fclose($archivo);
 
       ?>
