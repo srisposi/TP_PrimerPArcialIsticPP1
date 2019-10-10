@@ -54,6 +54,7 @@
     <!-- Begin page content -->
     <main role="main" class="container">
     <h1>Facturados</h1>
+    <h2>Patente</h2>
     <ol>
       <?php
       $facturadototal=0;
@@ -71,7 +72,7 @@
 
           $facturadototal=$facturadototal+$objeto->importe;
            echo"<li>"; 
-           echo"Patente: ". $objeto->patenteFacturada. "<br>". "FechaAlta: ".$objeto->fechaEntrada."<br>"."FechaBaja: ".$objeto->fechaSalida. "<br>". "Pago: ".$objeto->importe; 
+           echo $objeto->patenteFacturada. "<br>". "FechaAlta: ".$objeto->fechaEntrada."<br>"."FechaBaja: ".$objeto->fechaSalida. "<br>". "Pago: ".$objeto->importe; 
            echo"</li>";
 
           /*echo "<li>FechaAlta" . "......." . $objeto->fechaEntrada 

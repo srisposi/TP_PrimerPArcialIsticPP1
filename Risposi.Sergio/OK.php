@@ -1,4 +1,13 @@
+<?php
+if (isset($_GET['login']))
+{
+  session_start();
+}
+
+?>
+
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -37,17 +46,27 @@
               <a class="nav-link disabled" href="Patente.php">Patente</a>
             </li>
           </ul>
+          
           <form class="form-inline mt-2 mt-md-0">
+         
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <?php 
+            if (isset($_SESSION['Nombre'])) {
+              echo "<p>".$_SESSION['Nombre']."</p>";
+            }
+             ?>
+          
           </form>
+          
         </div>
       </nav>
     </header>
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      
+    
+
     </main>
 
     <footer class="footer">

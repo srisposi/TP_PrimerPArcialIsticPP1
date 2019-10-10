@@ -1,4 +1,5 @@
 <!doctype html>
+   
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -47,19 +48,27 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      
+   
+
+
    	<h1>Login</h1>
       <form action="hacerlogin.php">
         Nombre:<br>
         <input type="text" name="Nombre" value="">
         <br>
         Clave:<br>
-        <input type="text" name="Apellido" value="">
+        <input type="password" name="Apellido" value="">
         <br><br>
         <input type="submit" value="Submit">
       </form>
+    
+    
+    
+    
+    
     </main>
 
+    
     <footer class="footer">
       <div class="container">
         <span class="text-muted">Place sticky footer content here.</span>

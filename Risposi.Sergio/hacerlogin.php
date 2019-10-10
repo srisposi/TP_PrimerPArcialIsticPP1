@@ -1,7 +1,10 @@
 <?php
+    
 
 $checkUsuario = $_GET['Nombre'];
 $checkPassword = $_GET['Apellido'];
+	
+
 $Bandera=1;
 
 
@@ -20,13 +23,15 @@ while(!feof($archivo))
 			}
 
 		}
-			
+				 	
 		
 	}	
 
 if($Bandera==0)
 	{	
-		header("Location: OK.php");
+		session_start();
+		$_SESSION['Nombre']=$checkUsuario;
+		header("Location: OK.php?login=exito");
 		exit();
 	}
 	else 
