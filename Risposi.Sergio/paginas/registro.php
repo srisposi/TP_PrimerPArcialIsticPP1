@@ -31,7 +31,7 @@ session_start();
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <form action="acciones/hacerRegistro.php" class="form-signin">
+      <form action="../funciones/hacerRegistro.php" class="form-signin">
       <div class="text-center mb-4">
         <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Registro</h1>

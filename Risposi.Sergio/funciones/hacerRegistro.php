@@ -1,13 +1,15 @@
 <?php
 
 $miObjeto = new stdClass();
-$miObjeto->nombre = $_GET['nombre'];
-$miObjeto->contraseña = $_GET['contraseña'];
+$miObjeto->nombre = $_GET['inputUsuario'];
+$miObjeto->contraseña = $_GET['inputPassword'];
 
-$archivo = fopen('usuarios.txt', 'a');
-	fwrite($archivo, json_encode($miObjeto)."\n");
-	fclose($archivo);
+$archivo = fopen('../usuario/usuario.txt', 'a');
+fwrite($archivo, json_encode($miObjeto)."\n");
 
-header("Location: ../../paginas/ok.php");
+fclose($archivo);
+header("Location: ../paginas/ok.php");
+
+
 
 ?>
