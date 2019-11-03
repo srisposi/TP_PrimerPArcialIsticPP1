@@ -36,6 +36,12 @@ session_start();
         <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
 
+          <?php 
+          if (isset($_GET['exito'])) {
+            echo '<p>Registro ingresado correctamente!</p>';
+          }
+        ?>
+
       </div>     
         <input type="text" name="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
         <input type="password" name="inputPassword" class="form-control" placeholder="Password" required>

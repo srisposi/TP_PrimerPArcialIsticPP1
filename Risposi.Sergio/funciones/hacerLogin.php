@@ -30,29 +30,32 @@
 				if ($objeto->contraseña == $claveIngresada)
 				{
 					fclose($archivo);
-					$_SESSION['usuario']=$objeto->$Usuario;
-					$_SESSION['perfil']=$objeto->$Perfil;
+					$_SESSION['usuario']=$usuarioIngresado;
+					//var_dump($_SESSION['usuario']);
+					//die();
 
-					header("Location: ../paginas/ok.php?exito=signup");
+					$_SESSION['perfil']=$claveIngresada;
+
+					header("Location: ../paginas/login.php");
 					exit();
 				}			
 			}
 		 	
 		}	
 		if ($booUsuario == 0) {
-			header("Location: ../paginas/no.php?error=usuarioincorrecto");
+			header("Location: ../paginas/login.php?error=usuarioincorrecto");
 			fclose($archivo);
 			exit();
 		}
 		else 
 	    {
-			header("Location: ../paginas/no.php?error=contraseñaincorrecta");
+			header("Location: ../paginas/login.php?error=contraseñaincorrecta");
 			fclose($archivo);
 			exit();
 		}
 
 		fclose($archivo);
 	}	
-	header("Location: ../paginas/no.php");
+	header("Location: ../paginas/login.php");
 	exit();
 ?>

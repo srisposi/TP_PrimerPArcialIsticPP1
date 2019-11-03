@@ -36,30 +36,24 @@ session_start();
       <p class="lead">Bienvenido a Estacionamientos Risposi Sergio!!!</p>
 
 
-      <form class="form-signin" action="../funciones/hacerLogin.php">
+
+
+            <?php 
+                  if(isset($_SESSION['usuario'])){
+                    //solo muestra el menu si estas con la variable de sesión instaciada
+            ?>
+                              <h2>Usted ya esta logeado</h2>
+                              <h3>  <?php echo $_SESSION['usuario'];?>  </h3>
+                             
+            <?php 
+              }
+              else
+              {
+            ?>
+
+                              <form class="form-signin" action="../funciones/hacerLogin.php">
                               
-      <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
-
-                     <?php  
-                              if (isset($_SESSION['usuario'])) 
-                              {
-                                echo ('<p>Bienvenido!</p>');
-                              }
-                                                       
-                              else 
-                              {
-                                echo("Usted no se encuentra registrado");
-                              }  
-                            ?>
-
-
-
-
-
-
-
-
-
+                              <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
                               <label for="inputEmail" class="sr-only">Usuario</label>
                               <input type="text" id="inputEmail"  name="inputEmail"class="form-control" placeholder="tu usuario" required autofocus>
                               <label for="inputPassword" class="sr-only">Clave</label>
@@ -76,6 +70,9 @@ session_start();
 
 
 
+            <?php 
+              }
+            ?>
 
     </main>
       

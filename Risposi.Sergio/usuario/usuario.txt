@@ -1,3 +1,9 @@
 {"nombre":"ser","contrase\u00f1a":"ser"}
 {"nombre":"LOL","contrase\u00f1a":"LOL"}
-{"nombre":"admin","contrase\u00f1a":"admin"}
+{"nombre":"admin","contrase\u00f1a":"admin"}{"nombre":"sdr","contrase\u00f1a":"345"}
+{"nombre":"sergio2","contrase\u00f1a":"12399"}
+{"nombre":"fer","contrase\u00f1a":"333"}
+{"nombre":"jose","contrase\u00f1a":"guardiola"}
+{"nombre":"rr","contrase\u00f1a":"123"}
+{"nombre":"wewe","contrase\u00f1a":"we"}
+{"nombre":"pepe","contrase\u00f1a":"pepe"}

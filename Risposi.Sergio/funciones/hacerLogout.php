@@ -1,6 +1,6 @@
 <?php
 	session_start();
-$_SESSION=null;
+$_SESSION['usuario']=null;
 session_destroy();
-header("Location: /Risposi.Sergio/funciones/index.php");
+header("Location: ../index.php");
 ?>

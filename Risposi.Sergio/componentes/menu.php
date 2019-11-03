@@ -26,7 +26,11 @@
 
             <?php 
             if(isset($_SESSION['usuario'])){
-              //solo muestra el menu si estas con la variable de sesión instaciada
+            //solo muestra el menu si estas con la variable de sesión instaciada
+            //var_dump($_SESSION['usuario']);
+            //die();
+
+
             ?>
 
             <li class="nav-item">
@@ -65,7 +69,7 @@
             ?>
          
           </ul>
-          <form class="form-inline mt-2 mt-md-0" action="/istic2019/Session/funciones/hacerLogout.php">
+          <form class="form-inline mt-2 mt-md-0" action="/Risposi.Sergio/funciones/hacerLogout.php">
             <input class="form-control mr-sm-2" type="text" placeholder="Quien Soy" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Salir</button>
           </form>

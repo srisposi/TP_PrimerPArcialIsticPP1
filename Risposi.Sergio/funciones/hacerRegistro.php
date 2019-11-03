@@ -8,7 +8,7 @@ $archivo = fopen('../usuario/usuario.txt', 'a');
 fwrite($archivo, json_encode($miObjeto)."\n");
 
 fclose($archivo);
-header("Location: ../paginas/ok.php");
+header("Location: ../paginas/registro.php?exito=exito");
 
 
 
