@@ -1,0 +1,3 @@
+{"nombre":"1234","fechaIngreso":1572832425}{"patente":null,"horaIngreso":null,"horaSalida":1572837715,"totalCobrado":43689900}
+{"patente":null,"horaIngreso":null,"horaSalida":1572837759,"totalCobrado":43689900}
+{"patente":"111","horaIngreso":1572837755,"horaSalida":1572838809,"totalCobrado":0}

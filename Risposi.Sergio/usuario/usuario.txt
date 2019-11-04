@@ -7,3 +7,4 @@
 {"nombre":"rr","contrase\u00f1a":"123"}
 {"nombre":"wewe","contrase\u00f1a":"we"}
 {"nombre":"pepe","contrase\u00f1a":"pepe"}
+{"nombre":"jose","contrase\u00f1a":"larralde"}

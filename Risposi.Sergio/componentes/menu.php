@@ -34,7 +34,7 @@
             ?>
 
             <li class="nav-item">
-              <a class="nav-link" href="/Risposi.Sergio/paginas/ingresoVehiculo.php">Ingresar Vehiculo</a>
+              <a class="nav-link" href="/Risposi.Sergio/paginas/ingresarVehiculo.php">Ingresar Vehiculo</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/Risposi.Sergio/paginas/facturarVehiculo.php">Facturar Vehiculo</a>
