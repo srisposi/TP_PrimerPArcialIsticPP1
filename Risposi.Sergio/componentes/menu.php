@@ -40,9 +40,9 @@
               <a class="nav-link" href="/Risposi.Sergio/paginas/facturarVehiculo.php">Facturar Vehiculo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Risposi.Sergio/paginas/listarUsuarios.php">Listar Usuarios</a>
+              <a class="nav-link" href="/Risposi.Sergio/paginas/listarUsuario.php">Listar Usuarios</a>
             <li class="nav-item">
-              <a class="nav-link" href="/Risposi.Sergio/paginas/listarVehiculos.php">Listar Vehiculos</a>
+              <a class="nav-link" href="/Risposi.Sergio/paginas/listarVehiculo.php">Listar Vehiculos</a>
             </li>
           
             <?php 
