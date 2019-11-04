@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	setcookie("usuario");
 //var_dump($_GET['inputEmail']);
 //var_dump($_GET['inputPassword']);
 //die();
@@ -44,8 +43,7 @@
 
 					$_SESSION['perfil']=$claveIngresada;
 
-					
-
+					setcookie("usuario", $_SESSION['usuario'], expires_or_options, path, domain, secure, httponly);
 					header("Location: ../paginas/login.php");
 					exit();
 				}			
