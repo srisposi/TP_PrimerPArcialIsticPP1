@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	setcookie("usuario");
 //var_dump($_GET['inputEmail']);
 //var_dump($_GET['inputPassword']);
 //die();
@@ -27,6 +28,13 @@
 			if ($objeto->nombre == $usuarioIngresado) 
 			{	
 				$booUsuario = 1;
+				
+				$_COOKIE["usuario"]=$usuarioIngresado;
+
+				var_dump($_COOKIE['usuario']);
+				die();	
+
+
 				if ($objeto->contraseña == $claveIngresada)
 				{
 					fclose($archivo);
@@ -35,6 +43,8 @@
 					//die();
 
 					$_SESSION['perfil']=$claveIngresada;
+
+					
 
 					header("Location: ../paginas/login.php");
 					exit();

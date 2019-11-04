@@ -61,7 +61,10 @@ session_start();
 
 
                               <label for="inputEmail" class="sr-only">Usuario</label>
-                              <input type="text" id="inputEmail"  name="inputEmail"class="form-control" placeholder="tu usuario" required autofocus>
+                              <input type="text" id="inputEmail"  name="inputEmail"class="form-control" placeholder=<?php echo($_COOKIE['usuario']);?> required autofocus>
+                              
+
+
                               <label for="inputPassword" class="sr-only">Clave</label>
                               <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="la clave secreta" required>
                               <div class="checkbox mb-3">
