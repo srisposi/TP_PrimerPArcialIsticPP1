@@ -40,41 +40,32 @@ session_start();
                               
       <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
 
-                     <?php  
-                              if (isset($_SESSION['usuario'])) 
-                              {
-                                echo ('<p>Bienvenido!</p>');
-                              }
-                                                       
-                              else 
-                              {
-                                echo("Usted no se encuentra registrado");
-                              }  
-                            ?>
+           <?php  
+                    if (isset($_SESSION['usuario'])) 
+                    {
+                      echo ('<p>Bienvenido!</p>');
+                    }
+                                             
+                    else 
+                    {
+                      echo("Usted no se encuentra registrado");
+                    }  
+                  ?>
+            <label for="inputEmail" class="sr-only">Usuario</label>
+            <input type="text" id="inputEmail" name="inputEmail" class="form-control" placeholder="<?php echo($_COOKIE['usuario'])?>" required autofocus>
+            
 
 
-
-
-
-
-
-
-
-                              <label for="inputEmail" class="sr-only">Usuario</label>
-                              <input type="text" id="inputEmail"  name="inputEmail"class="form-control" placeholder=<?php echo($_COOKIE['usuario']);?> required autofocus>
-                              
-
-
-                              <label for="inputPassword" class="sr-only">Clave</label>
-                              <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="la clave secreta" required>
-                              <div class="checkbox mb-3">
-                                <label>
-                                  <input type="checkbox" value="remember-me"> Recordarme
-                                </label>
-                              </div>
-                              <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-                              <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
-                              </form>
+            <label for="inputPassword" class="sr-only">Clave</label>
+            <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="la clave secreta" required>
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Recordarme
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+            </form>
                             
 
 
