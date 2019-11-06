@@ -1,12 +1,13 @@
 <?php
 	session_start();
+	include 'AccesoDatos.php';
 //var_dump($_GET['inputEmail']);
 //var_dump($_GET['inputPassword']);
 //die();
 	$usuarioIngresado = $_GET['inputEmail'];
 	$claveIngresada = $_GET['inputPassword'];
 	setcookie("usuario", $usuarioIngresado);
-die();
+
 	$booUsuario = 0;
 	$booPassword = 0;
 
@@ -23,39 +24,37 @@ die();
 		$datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 
-
-
-
+		//$_SESSION['usuario']=$usuarioIngresado;
+	
 
 
 		//$archivo = fopen("../usuario/usuario.txt", "r") or die("Imposible arbrir el archivo");
 	
 		//while(!feof($archivo)) 
 		foreach ($datos as $usuario) 
-		
-
-
 		{
 			//$objeto = json_decode(fgets($archivo));
-			
+	
 
 			//var_dump($objeto->nombre);	
 			//var_dump($objeto->contraseña);
 			//die();
-			if ($objeto->nombre == $usuarioIngresado) 
+			//if ($objeto->nombre == $usuarioIngresado) 
+			if ($usuario["nombre"] == $usuarioIngresado) 
 			{	
+
+	
 				$booUsuario = 1;
-				
-				
-				
 				//var_dump($_COOKIE['usuario']);
 				//die();	
-
-
-				if ($objeto->contraseña == $claveIngresada)
+				
+				//if ($objeto->contraseña == $claveIngresada)
+				if ($usuario["clave"] == $claveIngresada)
 				{
+					$booPassword = 1;
 					//fclose($archivo);
-					
+				///	var_dump($usuario);
+		//die();
 					$_SESSION['usuario']=$usuarioIngresado;
 					//var_dump($_SESSION['usuario']);
 					//die();

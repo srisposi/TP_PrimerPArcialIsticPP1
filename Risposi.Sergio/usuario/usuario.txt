@@ -9,3 +9,4 @@
 {"nombre":"pepe","contrase\u00f1a":"pepe"}
 {"nombre":"jose","contrase\u00f1a":"larralde"}
 {"nombre":"admin","contrase\u00f1a":"123"}
+{"nombre":"jose","contrase\u00f1a":"larralde"}
