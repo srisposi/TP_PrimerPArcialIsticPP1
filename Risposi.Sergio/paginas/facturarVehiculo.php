@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'AccesoDatos.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,50 +31,84 @@ session_start();
     </header>
 
     <!-- Begin page content -->
-    <main role="main" class="container">
-         
-      <h1 class="mt-5">Estacionamiento ISTIC 2019</h1>
-      <p class="lead">Facturación</p>
+    <section>
+      <nav>
+        <main role="main" class="container">
+             
+          <h1 class="mt-5">Estacionamiento ISTIC 2019</h1>
+          <p class="lead">Facturación</p>
 
 
-      <form class="form-signin" action="../funciones/hacerFacturar.php">
-                              
-      <h1 class="h3 mb-3 font-weight-normal">Facturación</h1>
+          <form class="form-signin" action="../funciones/hacerFacturar.php">
+                                  
+          <h1 class="h3 mb-3 font-weight-normal">Facturación</h1>
 
-                    <?php 
-        if (isset($_GET['exito']))
-        {        
-            echo '<p>Vehiculo facturado!</p>'; 
-        }
-        else if (isset($_GET['cobrar'])) 
-        { 
-          $aPagar = $_GET['cobrar'];
-          $ingreso = $_GET['ingreso'];
-          $salida = $_GET['salida'];
-          $estadia = $_GET['estadia'];
-          echo "<p>Fecha de ingreso: ".date("d-m-y H:i",$ingreso)."</p><br>";
-          echo "<p>Fecha de salida: ".date("d-m-y H:i",$salida)."</p><br>";
-          echo "<p>Cantidad de horas de estadia: ".$estadia."</p><br>";
-          echo "<p>Total a pagar: $".$aPagar."</p><br>";
-        }
-        else if (isset($_GET['error'])) 
-        {
-          echo '<p>No existe un vehiculo con esa patente!</p>';  
-        }
-        ?>        
+                        <?php 
+            if (isset($_GET['exito']))
+            {        
+                echo '<p>Vehiculo facturado!</p>'; 
+            }
+            else if (isset($_GET['cobrar'])) 
+            { 
+              $aPagar = $_GET['cobrar'];
+              $ingreso = $_GET['ingreso'];
+              $salida = $_GET['salida'];
+              $estadia = $_GET['estadia'];
+              echo "<p>Fecha de ingreso: ".date("d-m-y H:i",$ingreso)."</p><br>";
+              echo "<p>Fecha de salida: ".date("d-m-y H:i",$salida)."</p><br>";
+              echo "<p>Cantidad de horas de estadia: ".$estadia."</p><br>";
+              echo "<p>Total a pagar: $".$aPagar."</p><br>";
+            }
+            else if (isset($_GET['error'])) 
+            {
+              echo '<p>No existe un vehiculo con esa patente!</p>';  
+            }
+            ?>        
 
-        <input type="text" name="inputPatente" class="form-control" placeholder="patente" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Facturar</button> 
+            <input type="text" name="inputPatente" class="form-control" placeholder="patente" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Facturar</button> 
+
+           </form>
+         </main>   
+        </nav>
+
+        <article>
+          
+          <tr>
+            <th>Patente</th>
+            <th>Fecha/Hora Ingreso</th>
+          </tr>  
+
+
+          <?php 
+
+          $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+          $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , clave  from factura");
+          $consulta->execute();     
+          $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-        </form>
-                            
+          foreach ($datos as $patente) 
+            {
+            echo "<tr>";
+            echo "<td>".$patente."</td>   
+                  <td>".$ingreso."</td>";   
+            echo "</tr>";
+            }
+             
+
+          ?>  
+
+
+
+    </article>    
+
+  </section>             
 
 
 
 
-    </main>
       
      <footer class="footer">
     <?php

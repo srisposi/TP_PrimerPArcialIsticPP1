@@ -37,14 +37,31 @@ session_start();
         <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
 
           <?php 
-          if (isset($_GET['exito'])) {
-            echo '<p>Registro ingresado correctamente!</p>';
-          }
+          if (isset($_GET['exito'])) 
+          {
+            if($_GET['exito']=="exito")
+            {
+
+              echo '<p>Registro ingresado correctamente!</p>';
+            }
+            else
+            {
+              echo "Usario ya registrado";
+            }  
+          }          
+
         ?>
 
       </div>     
         <input type="text" name="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
         <input type="password" name="inputPassword" class="form-control" placeholder="Password" required>
+
+
+        <select name="perfilRegistro">
+          <option value="admin">Administrador</option>
+          <option value="cajero">Cajero</option>          
+        </select>
+
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
       

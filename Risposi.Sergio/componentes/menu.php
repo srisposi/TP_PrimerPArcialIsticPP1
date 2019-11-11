@@ -11,7 +11,8 @@
               <a class="nav-link" href="/Risposi.Sergio/index.php">Inicio <span class="sr-only">(current)</span></a>
             </li>
               <?php 
-            if(isset($_SESSION['usuario'])==false){
+            if(isset($_SESSION['usuario'])==false)
+            {
               //solo muestra estos item , si el usuario no esta logeado
             ?>
             <li class="nav-item">
@@ -25,7 +26,8 @@
             ?>
 
             <?php 
-            if(isset($_SESSION['usuario'])){
+            if(isset($_SESSION['usuario']))
+            {
             //solo muestra el menu si estas con la variable de sesión instaciada
             //var_dump($_SESSION['usuario']);
             //die();
@@ -52,7 +54,7 @@
 
 
             <?php 
-            if(isset($_SESSION['usuario']) && isset($_SESSION['perfil']) &&$_SESSION['perfil']=="admin"){
+            if(isset($_SESSION['usuario']) && ($_SESSION['perfil']=="admin")){
               //solo muestra el menu si estas con la variable de sesión instaciada y sos de perfil admin
             ?>
 
