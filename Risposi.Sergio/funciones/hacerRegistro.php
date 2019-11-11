@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 /*$miObjeto = new stdClass();
 $miObjeto->nombre = $_GET['inputUsuario'];
@@ -17,7 +18,7 @@ include 'AccesoDatos.php';
 $miObjeto = new stdClass();
 $miObjeto->nombre = $_GET['inputUsuario'];
 $miObjeto->apellido = $_GET['inputPassword'];
-$miObjeto->perfil= $_GET['perfilRegistro'];
+$miObjeto->perfil= $_SESSION['perfilRegistro'];
 
 //Hago una consulta a mi base de datos para ver si el usuario ingresado ya esta 
 //registrado
@@ -39,11 +40,11 @@ foreach ($datos as $usuario)
 	else
 	{
 
-		$select="INSERT INTO usuario( nombre, clave) VALUES ('$miObjeto->nombre','$miObjeto->apellido','$miObjeto->perfil')";
-		$consulta =$objetoAccesoDato->RetornarConsulta($select);
+		$select="INSERT INTO usuario( nombre, clave) VALUES ('$miObjeto->nombre','$miObjeto->apellido')";
+		$consulta=$objetoAccesoDato->RetornarConsulta($select);
 		$consulta->execute();
 
-		header("Location: ../paginas/registro.php?exito=repetido");
+		header("Location: ../paginas/registro.php?exito=exito");
 
 	}	
 
