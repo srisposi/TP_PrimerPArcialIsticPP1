@@ -52,7 +52,7 @@ session_start();
                     }  
                   ?>
             <label for="inputEmail" class="sr-only">Usuario</label>
-            <input type="text" id="inputEmail" name="inputEmail" class="form-control" placeholder="<?php echo($_COOKIE['usuario'])?>" required autofocus>
+            <input type="text" id="inputEmail" name="inputEmail" class="form-control" placeholder="<?php echo($_COOKIE['usuario']);?>" required autofocus>
             
 
 

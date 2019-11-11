@@ -15,6 +15,8 @@ header("Location: ../paginas/registro.php?exito=exito");
 
 include 'AccesoDatos.php';
 
+$bandera=0;
+
 $miObjeto = new stdClass();
 $miObjeto->nombre = $_GET['inputUsuario'];
 $miObjeto->apellido = $_GET['inputPassword'];
@@ -32,21 +34,34 @@ foreach ($datos as $usuario)
 {
 	if ($usuario["nombre"] == $miObjeto->nombre)
 	{
-
-
-		header("Location: ../paginas/registro.php?exito=repetido");
+		bandera=0;		
 
 	}
 	else
 	{
+		bandera=1;
+	
 
-		$select="INSERT INTO usuario( nombre, clave) VALUES ('$miObjeto->nombre','$miObjeto->apellido')";
+	}	
+
+if(bandera=0)
+{
+	header("Location: ../paginas/registro.php?exito=repetido");
+
+}
+else
+{
+	$select="INSERT INTO usuario( nombre, clave) VALUES ('$miObjeto->nombre','$miObjeto->apellido')";
 		$consulta=$objetoAccesoDato->RetornarConsulta($select);
 		$consulta->execute();
 
 		header("Location: ../paginas/registro.php?exito=exito");
 
-	}	
+
+}
+
+
+
 
 }
 
