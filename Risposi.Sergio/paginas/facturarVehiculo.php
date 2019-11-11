@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'AccesoDatos.php';
+include "../funciones/AccesoDatos.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -83,7 +83,7 @@ include 'AccesoDatos.php';
           <?php 
 
           $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-          $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , clave  from factura");
+          $consulta =$objetoAccesoDato->RetornarConsulta("select patente from factura");
           $consulta->execute();     
           $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 

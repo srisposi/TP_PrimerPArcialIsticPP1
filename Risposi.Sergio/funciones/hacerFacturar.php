@@ -3,6 +3,7 @@
 //var_dump($_GET['inputEmail']);
 //var_dump($_GET['inputPassword']);
 //die();
+include "AccesoDatos.php";
 	$precioFraccion = 100;	
 	//$bandera = 0;
 	

@@ -15,7 +15,7 @@ header("Location: ../paginas/registro.php?exito=exito");
 
 include 'AccesoDatos.php';
 
-$bandera=0;
+$bandera=1;
 
 $miObjeto = new stdClass();
 $miObjeto->nombre = $_GET['inputUsuario'];
@@ -26,28 +26,23 @@ $miObjeto->perfil= $_SESSION['perfilRegistro'];
 //registrado
 
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-$consulta =$objetoAccesoDato->RetornarConsulta("select nombre  , clave  from usuario");
+$consulta =$objetoAccesoDato->RetornarConsulta("select nombre from usuario");
 $consulta->execute();			
-$datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+$datos = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($datos as $usuario) 
 {
+	
 	if ($usuario["nombre"] == $miObjeto->nombre)
 	{
-		bandera=0;		
+		$bandera=0;
+		break;
+	}		
+}
 
-	}
-	else
-	{
-		bandera=1;
-	
-
-	}	
-
-if(bandera=0)
+if($bandera==0)
 {
 	header("Location: ../paginas/registro.php?exito=repetido");
-
 }
 else
 {
@@ -56,20 +51,7 @@ else
 		$consulta->execute();
 
 		header("Location: ../paginas/registro.php?exito=exito");
-
-
 }
-
-
-
-
-}
-
-
-
-
-
-
 
 /*INSERT INTO usuario( nombre, clave) VALUES ("natalia","natalia")
 

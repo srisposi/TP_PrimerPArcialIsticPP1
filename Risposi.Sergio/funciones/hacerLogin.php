@@ -6,7 +6,7 @@
 //die();
 	$usuarioIngresado = $_GET['inputEmail'];
 	$claveIngresada = $_GET['inputPassword'];
-	setcookie("usuario", $usuarioIngresado);
+	
 
 	$booUsuario = 0;
 	$booPassword = 0;
@@ -53,9 +53,11 @@
 				{
 					$booPassword = 1;
 					//fclose($archivo);
-				///	var_dump($usuario);
-		//die();
+
 					$_SESSION['usuario']=$usuarioIngresado;
+					setcookie("usuario", $usuarioIngresado);				
+					$_COOKIE['usuario']=$_SESSION['usuario'];
+					
 					//var_dump($_SESSION['usuario']);
 					//die();
 
