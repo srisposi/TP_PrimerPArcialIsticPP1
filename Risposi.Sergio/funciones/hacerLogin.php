@@ -55,11 +55,12 @@
 					//fclose($archivo);
 
 					$_SESSION['usuario']=$usuarioIngresado;
+
 					setcookie("usuario", $usuarioIngresado);				
 					$_COOKIE['usuario']=$_SESSION['usuario'];
 					
-					//var_dump($_SESSION['usuario']);
-					//die();
+					var_dump($_COOKIE['usuario']);
+					die();
 
 					$_SESSION['perfil']=$claveIngresada;
 

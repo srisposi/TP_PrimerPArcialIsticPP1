@@ -41,6 +41,8 @@ session_start();
       <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
 
            <?php  
+          // var_dump($_COOKIE['usuario']);
+           //die();
                     if (isset($_SESSION['usuario'])) 
                     {
                       echo ('<p>Bienvenido!</p>');
@@ -53,7 +55,12 @@ session_start();
                   ?>
             <label for="inputEmail" class="sr-only">Usuario</label>
            
-            <input type="text" id="inputEmail" name="inputEmail" class="form-control" placeholder="<?php echo ($_COOKIE['usuario']);?>" required autofocus>
+            <input type="text" id="inputEmail" name="inputEmail" class="form-control" placeholder="<?php 
+            if (isset($_COOKIE['usuario'])) 
+                    { 
+                      echo ($_COOKIE['usuario']);
+                     }
+                      ;?>" required autofocus>
 
 
             <label for="inputPassword" class="sr-only">Clave</label>

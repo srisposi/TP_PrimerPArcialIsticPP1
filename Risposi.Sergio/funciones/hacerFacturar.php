@@ -4,7 +4,7 @@
 //var_dump($_GET['inputPassword']);
 //die();
 include "AccesoDatos.php";
-	$precioFraccion = 100;	
+	$precio = 100;	
 	//$bandera = 0;
 	
 	//date_default_timezone_set('America/Argentina/Buenos_Aires');
@@ -20,8 +20,11 @@ include "AccesoDatos.php";
 	else
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		
 		$consulta =$objetoAccesoDato->RetornarConsulta("select id, patente, horaingreso from factura");
+	
 		$consulta->execute();			
+		
 		$datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 
