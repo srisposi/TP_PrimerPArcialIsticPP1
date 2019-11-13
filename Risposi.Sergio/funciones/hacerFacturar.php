@@ -58,16 +58,26 @@ include "AccesoDatos.php";
 				//$bandera = 1;
 
 				date_default_timezone_set('America/Argentina/Buenos_Aires');
-        		$horaSalida = mktime();
-        		$tiempo = $horaSalida - $factura['horaingreso'];
+
+        		$horaSalida=mktime();
+
+
+        		$date = new DateTime("$horaSalida");
+				$result = $date->format('Y-m-d');
+        		
+        		$tiempo = $result - $factura['fechaIngreso']);
+
+				var_dump($tiempo);
+				die();
+
         		$resultado = $tiempo * $precio;	
 
         	}
 
 
-				$objetoHistorico->patente = $objetoPatente;
-				$objetoHistorico->horaIngreso = $horaEntrada;
-				$objetoHistorico->horaSalida = $horaSalida;
+				$objetoHistorico->patente = $factura['patente'];
+				$objetoHistorico->fechaIngreso = $horaEntrada;
+				$objetoHistorico->FechaSalida = $horaSalida;
 				$objetoHistorico->totalCobrado = $resultado;
 				
 				//fwrite($historico, json_encode($objetoHistorico)."\n");
