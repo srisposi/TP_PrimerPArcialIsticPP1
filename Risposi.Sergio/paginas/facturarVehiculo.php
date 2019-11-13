@@ -73,7 +73,7 @@ include "../funciones/AccesoDatos.php";
         </nav>
 
         <article>
-          
+          <table>
           <tr>
             <th>Patente</th>
             <th>Fecha/Hora Ingreso</th>
@@ -83,24 +83,27 @@ include "../funciones/AccesoDatos.php";
           <?php 
 
           $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-          $consulta =$objetoAccesoDato->RetornarConsulta("select patente from factura");
+          $consulta =$objetoAccesoDato->RetornarConsulta("select * from factura");
           $consulta->execute();     
           $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+//var_dump($datos);
+//die();
 
 
-
-          foreach ($datos as $patente) 
+          foreach ($datos as $vehiculo) 
             {
+
+
             echo "<tr>";
-            echo "<td>".$patente."</td>   
-                  <td>".$ingreso."</td>";   
+            echo "<td>".$vehiculo['patente']."</td>   
+                  <td>".$vehiculo["fechaIngreso"]."</td>";   
             echo "</tr>";
             }
              
 
           ?>  
 
-
+</table>
 
     </article>    
 

@@ -21,7 +21,7 @@ include "AccesoDatos.php";
 	{
 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 		
-		$consulta =$objetoAccesoDato->RetornarConsulta("select id, patente, horaingreso from factura");
+		$consulta =$objetoAccesoDato->RetornarConsulta("select id, patente, fechaIngreso from factura");
 	
 		$consulta->execute();			
 		
