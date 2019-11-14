@@ -53,10 +53,11 @@ include "../funciones/AccesoDatos.php";
               $aPagar = $_GET['cobrar'];
               $ingreso = $_GET['ingreso'];
               $salida = $_GET['salida'];
-              $estadia = $_GET['estadia'];
+              
+              //$estadia = $_GET['estadia'];
               echo "<p>Fecha de ingreso: ".date("d-m-y H:i",$ingreso)."</p><br>";
               echo "<p>Fecha de salida: ".date("d-m-y H:i",$salida)."</p><br>";
-              echo "<p>Cantidad de horas de estadia: ".$estadia."</p><br>";
+              //echo "<p>Cantidad de horas de estadia: ".$estadia."</p><br>";
               echo "<p>Total a pagar: $".$aPagar."</p><br>";
             }
             else if (isset($_GET['error'])) 

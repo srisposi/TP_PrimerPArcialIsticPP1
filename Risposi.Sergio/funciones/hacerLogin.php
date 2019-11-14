@@ -59,8 +59,8 @@
 					setcookie("usuario", $usuarioIngresado);				
 					$_COOKIE['usuario']=$_SESSION['usuario'];
 					
-					var_dump($_COOKIE['usuario']);
-					die();
+					//var_dump($_COOKIE['usuario']);
+					//die();
 
 					$_SESSION['perfil']=$claveIngresada;
 
