@@ -43,16 +43,34 @@ session_start();
            <?php  
           // var_dump($_COOKIE['usuario']);
            //die();
-                    if (isset($_SESSION['usuario'])) 
-                    {
-                      echo ('<p>Bienvenido!</p>');
-                    }
-                                             
-                    else 
-                    {
-                      echo("Usted no se encuentra registrado");
-                    }  
-                  ?>
+                if (isset($_GET['error'])) 
+                {
+                  if ($_GET['error'] == "camposvacios") 
+                  {
+                    echo '<p>Llena todos los campos.</p>';
+                  }
+                  else if ($_GET['error'] == "contrasenaincorrecta") 
+                  {
+                    echo '<p>La contraseña es incorrecta.</p>';
+                  }
+                  else if ($_GET['error'] == "usuarioincorrecto") 
+                  {
+                    echo '<p>El usuario no existe.</p>';
+                  }
+                  else if ($_GET['error'] == "usuariodenegado") 
+                  {
+                    echo '<p>No estas habilitado a entrar.</p>';
+                  }
+                  elseif (isset($_SESSION['usuario'])) 
+                  {
+                    echo ('<p>Bienvenido!</p>');
+                  }                                                          
+                else 
+                {
+                  echo("Usted no se encuentra registrado");
+                }
+              }    
+                ?>
             <label for="inputEmail" class="sr-only">Usuario</label>
            
             <input type="text" id="inputEmail" name="inputEmail" class="form-control" placeholder="<?php 

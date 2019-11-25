@@ -9,6 +9,7 @@ $miObjeto->nombre = $_GET['inputUsuario'];
 $miObjeto->apellido = $_GET['inputPassword'];
 $_SESSION['perfilRegistro']=$_GET['perfilRegistro'];
 $miObjeto->perfil= $_SESSION['perfilRegistro'];
+$miObjeto->estado="Habilitado";
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 $consulta =$objetoAccesoDato->RetornarConsulta("select nombre from usuario");
 $consulta->execute();			
@@ -31,11 +32,11 @@ if($bandera==0)
 else
 {
 //Cargo el nuevo registro en la tabla usuario	
-	$select="INSERT INTO usuario( nombre, clave) VALUES ('$miObjeto->nombre','$miObjeto->apellido')";
+	$select="INSERT INTO usuario( nombre, clave, perfil, estado) VALUES ('$miObjeto->nombre','$miObjeto->apellido','$miObjeto->perfil','$miObjeto->estado')";
 		$consulta=$objetoAccesoDato->RetornarConsulta($select);
 		$consulta->execute();
 //Cargo el nuevo registro en la tabla historicoUsuario
-	$insert="INSERT INTO historicoUsuario( nombre, perfil) VALUES ('$miObjeto->nombre','$miObjeto->perfil')";
+	$insert="INSERT INTO historicoUsuario(nombre, perfil, estado) VALUES ('$miObjeto->nombre','$miObjeto->perfil','$miObjeto->estado')";
 	$consulta=$objetoAccesoDato->RetornarConsulta($insert);
 		$consulta->execute();	
 //finalmente devuelvo por header exito para que lo muestre en la pagina Registro

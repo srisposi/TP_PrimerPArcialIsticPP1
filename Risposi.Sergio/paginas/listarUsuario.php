@@ -26,41 +26,77 @@ session_start();
       if (isset($_SESSION['usuario'])) 
       {
         ?>      
-    	<div>
-      	<h2>Listado de usuarios</h2>
+    	
+        <div class="row justify-content-center">
+          <div class="col-sm-8 bg-row pl-5 pr-5 pt-4 pb-5">
+             <form action="../funciones/modificoUsuario.php" method="post" accept-charset="utf-8">
+              <h2 class="h3 mb-5 text-center font-weight-normal">Listado de usuarios</h2>
       	
-			<?php
-      echo "<table border='2'>";
-      echo "<tr>";
-      echo "<th>codigoID</th>";
-      echo "<th>Nombre</th>";
-      echo "</tr>"; 
+        			<?php
+              echo "<table border='2'>";
+              echo "<tr>";
+              echo "<th>codigoID</th>";
+              echo "<th>Nombre</th>";
+              echo "<th>perfil</th>";
+              echo "<th>Estado</th>";
+              echo "</tr>"; 
 
-      $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();    
-      $consulta =$objetoAccesoDato->RetornarConsulta("select * from usuario");  
-      $consulta->execute();         
-      $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
- 
-      foreach ($datos as $usuario){ 
-        echo "<tr>";
-        echo "<td>";
-        echo $usuario['id'];
-        echo "</td>";
-        echo "<td>";        
-        echo $usuario['nombre'];
-        //echo("<a href='../TALLER/Edito.php?ID=".$fila['nro de orden']."'><img src='habilitar.png'></a>");
-        echo "</td>";
-        echo "<tr>";
-      }
-      echo "</table>";
-			?>
+              $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();    
+              $consulta =$objetoAccesoDato->RetornarConsulta("select * from usuario");  
+              $consulta->execute();         
+              $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+         
+              foreach ($datos as $usuario){ 
+                echo "<tr>";
+                echo "<td>";
+                echo $usuario['id'];
+                echo "</td>";
+                echo "<td>";        
+                echo $usuario['nombre'];
+                echo "</td>";
+                echo "<td>";        
+                echo $usuario['perfil'];
+                echo "</td>";
+                echo "<td>";
+                if ($usuario['estado'] == 'Deshabilitado') 
+                  {
+                    echo "<button type='submit' name='habilitar' value='".$usuario['nombre']."' class='btn btn-success'>Habilitar</button>";
+                  }
+                  else
+                  {                    
+                    echo "<button type='submit' name='deshabilitar' value='".$usuario['nombre']."' class='btn btn-danger'>Deshabilitar</button>";
+                  }                   
+                //echo("<a href='../TALLER/Edito.php?ID=".$fila['nro de orden']."'><img src='habilitar.png'></a>");
+                echo "</td>";
+                echo "<tr>";
+              }
+              echo "</table>";
+        			?>
 		
-		</div>
-    <?php 
-     }
-     ?>
- 	</main>
- </body>
+		        </form>
+          </div>
+        </div>
+        <?php 
+        }
+        ?>
+
+        <?php 
+          if (isset($_GET['exito'])) 
+          {
+            if($_GET['actualizar']=="exito1")
+            {
+
+              echo '<p>Habilitado con éxito!</p>';
+            }
+            else
+            {
+              echo '<p>Deshabilitado con éxito!</p>';             
+            }  
+          }          
+
+        ?>
+ 	    </main>
+    </body>
     <footer class="footer">
       <?php  
         include "../componentes/pie.php";
