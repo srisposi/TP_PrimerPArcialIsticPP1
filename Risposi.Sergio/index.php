@@ -35,7 +35,7 @@ session_start();
                 <p class="lead">Bienvenido al Estacionamiento de Risposi Sergio!!!</p>
                 </article>
                 <nav>
-                    <img calss="foto1" src="https://files.merca20.com/uploads/2018/03/Super-Mario-Nintendo-Bigstock.jpg">
+                    <img class="foto1" src="https://files.merca20.com/uploads/2018/03/Super-Mario-Nintendo-Bigstock.jpg">
                 </nav>
 
             </section>    
