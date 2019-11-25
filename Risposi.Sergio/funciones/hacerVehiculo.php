@@ -20,7 +20,7 @@ if(!isset($datos[0]['patente']))
 		$consulta =$objetoAccesoDato->RetornarConsulta($select);		
 		$consulta->execute();
 		
-		$selectdos="INSERT INTO historicoVehiculo (patente, fechaIngreso) VALUES ('$miObjeto->patente','$fechaIngreso')";		
+		$selectdos="INSERT INTO historicoVehiculos (patente, fechaIngreso) VALUES ('$miObjeto->patente','$fechaIngreso')";		
 		$consulta =$objetoAccesoDato->RetornarConsulta($selectdos);		
 		$consulta->execute();
 

@@ -19,7 +19,7 @@
         <li class="nav-item">
         <nav class="navbar navbar-light bg-dark">
         <a class="navbar-brand" href="/Risposi.Sergio/paginas/login.php">
-        <img src="../botones/login.png" width="30" height="30" alt="">
+        <img src="../botones/login.png" width="30" height="30" alt="">Login
         </a>
         </nav>
         </li>
