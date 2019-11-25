@@ -3,6 +3,8 @@ include "AccesoDatos.php";
 $precio = 100;	
 $bandera=1;
 $checkPatente = $_GET['inputPatente'];
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+		$horaSalida=mktime();
 if (empty($checkPatente)) 
 {
 	header("Location: ../paginas/facturarVehiculo.php?error=campovacio");
@@ -22,8 +24,7 @@ foreach ($datos as $factura)
 	if ($factura["patente"] == $checkPatente)  
 	{	
 		$bandera=0;
-		date_default_timezone_set('America/Argentina/Buenos_Aires');
-		$horaSalida=mktime();
+		
 		        		
 		$tiempo = $horaSalida - $factura['fechaIngreso'];
 		$resultado = $tiempo * $precio;	
@@ -32,11 +33,6 @@ foreach ($datos as $factura)
 
 if($bandera==0)
 {
-	$objetoHistorico->patente = $factura['patente'];
-	$objetoHistorico->fechaIngreso = $factura['fechaIngreso'];
-	$objetoHistorico->FechaSalida = $horaSalida;
-	$objetoHistorico->totalCobrado = $resultado;
-	
 	
 	$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();	    	
 	$select="INSERT INTO historicoFacturados(patente, fechaIngreso, fechaEgreso, montoFactura) VALUES ('$objetoHistorico->patente','$objetoHistorico->fechaIngreso','$objetoHistorico->FechaSalida','$objetoHistorico->totalCobrado')";	    	

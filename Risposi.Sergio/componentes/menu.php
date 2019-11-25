@@ -42,7 +42,7 @@
             }
             ?>
              <?php 
-            if(isset($_SESSION['usuario']) && ($_SESSION['perfilRegistrado']=="admin")){
+            if(isset($_SESSION['usuario']) && ($_SESSION['perfilRegistro']=="admin")){
               //solo muestra el menu si estas con la variable de sesión instaciada y sos de perfil admin
             ?>
            

@@ -7,8 +7,8 @@ $bandera=1;
 $miObjeto = new stdClass();
 $miObjeto->nombre = $_GET['inputUsuario'];
 $miObjeto->apellido = $_GET['inputPassword'];
+$_SESSION['perfilRegistro']=$_GET['perfilRegistro'];
 $miObjeto->perfil= $_SESSION['perfilRegistro'];
-
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 $consulta =$objetoAccesoDato->RetornarConsulta("select nombre from usuario");
 $consulta->execute();			
