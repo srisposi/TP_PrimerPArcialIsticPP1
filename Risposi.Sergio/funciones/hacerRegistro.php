@@ -1,18 +1,5 @@
 <?php
 session_start();
-
-/*$miObjeto = new stdClass();
-$miObjeto->nombre = $_GET['inputUsuario'];
-$miObjeto->contraseña = $_GET['inputPassword'];
-
-$archivo = fopen('../usuario/usuario.txt', 'a');
-fwrite($archivo, json_encode($miObjeto)."\n");
-
-fclose($archivo);
-header("Location: ../paginas/registro.php?exito=exito");
-*/
-
-
 include 'AccesoDatos.php';
 
 $bandera=1;
@@ -22,14 +9,11 @@ $miObjeto->nombre = $_GET['inputUsuario'];
 $miObjeto->apellido = $_GET['inputPassword'];
 $miObjeto->perfil= $_SESSION['perfilRegistro'];
 
-//Hago una consulta a mi base de datos para ver si el usuario ingresado ya esta 
-//registrado
-
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 $consulta =$objetoAccesoDato->RetornarConsulta("select nombre from usuario");
 $consulta->execute();			
 $datos = $consulta->fetchAll(PDO::FETCH_ASSOC);
-
+//Consulta para ver si el usuario ya esta registrado
 foreach ($datos as $usuario) 
 {
 	
@@ -39,25 +23,23 @@ foreach ($datos as $usuario)
 		break;
 	}		
 }
-
+//Si esta registrado vuelvo por header un repetido que lo recibe registro y lo muestra y si no esta lo cargo en dos tablas.
 if($bandera==0)
 {
 	header("Location: ../paginas/registro.php?exito=repetido");
 }
 else
 {
+//Cargo el nuevo registro en la tabla usuario	
 	$select="INSERT INTO usuario( nombre, clave) VALUES ('$miObjeto->nombre','$miObjeto->apellido')";
 		$consulta=$objetoAccesoDato->RetornarConsulta($select);
 		$consulta->execute();
-
+//Cargo el nuevo registro en la tabla historicoUsuario
+	$insert="INSERT INTO historicoUsuario( nombre, perfil) VALUES ('$miObjeto->nombre','$miObjeto->perfil')";
+	$consulta=$objetoAccesoDato->RetornarConsulta($insert);
+		$consulta->execute();	
+//finalmente devuelvo por header exito para que lo muestre en la pagina Registro
 		header("Location: ../paginas/registro.php?exito=exito");
 }
-
-/*INSERT INTO usuario( nombre, clave) VALUES ("natalia","natalia")
-
-$archivo = fopen('usuarios.txt', 'a');
-fwrite($archivo, json_encode($miObjeto)."\n");
-fclose($archivo);*
-*/
 
 ?>

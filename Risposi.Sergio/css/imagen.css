@@ -1,0 +1,102 @@
+* 
+/* Para centrar la imagen */
+.foto1 {
+  /*display: block;
+  margin-left: auto;
+  margin-right: auto;*/
+  width: 50%;
+  height: 50%;
+/*Para darle el borde a la imagen*/
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+ 
+}
+
+/* Clase para las listas */
+.b {
+  list-style-position: inside;
+  list-style-type: square; 
+  margin: 0;
+  padding: 0;
+  align-content: center
+
+}
+
+
+
+{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #4946D8;
+}
+
+/* Style the header */
+header {
+  background-color: #4946D8;
+  padding: 85px;
+  text-align: left;
+  font-size: 35px;
+  color: black;
+}
+
+/* Creamos dos columnas con los flotantes una al lado de la otra*/
+nav {
+  float: right;
+  width: 35%;
+  height: 200px; 
+  background: #4946D8;
+  padding: 30px;
+  text-align: right;
+}
+
+
+/* Estilo de la lista dentro del menú */
+
+article {
+
+  text-align: left;
+  float: center;
+  padding: 5px;
+  width: 60%;
+  background-color: #4946D8;
+  height: 150%; 
+}
+
+/* Limpia flotantes después de las columnas */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+  text-align: center;
+  height: all;
+  padding: 50px;
+  background: #4946D8;
+
+}
+
+/* Estilo del footer */
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   padding: 5px;
+   width: 100%;
+   background-color: #4946D8;
+   color: white;
+   text-align: center;
+}
+
+  
+
+
+/* Responsive layout */
+@media (max-width: 800px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}

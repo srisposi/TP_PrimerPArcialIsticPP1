@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 ?>
@@ -11,33 +10,37 @@ session_start();
     <meta name="author" content="">
     <link rel="icon" href="favicon/mario.ico">
 
-    <title>Estacionamiento Risposi Sergio</title>
+    <title>Estacionamiento Mario</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/sticky-footer-navbar.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/floating-labels.css" rel="stylesheet">
+
+    <link href="css/imagen.css">
+
 
   </head>
-
-  <body>
 
     <header>
     <?php
         include "componentes/menu.php";
     ?>
     </header>
+    <body>
+        <main role="main" class="container">    
+            <section>
+                <article>            
+                <h1 class="mt-5">Estacionamiento Mario</h1>
+                <p class="lead">Bienvenido al Estacionamiento de Risposi Sergio!!!</p>
+                </article>
+                <nav>
+                    <img calss="foto1" src="https://files.merca20.com/uploads/2018/03/Super-Mario-Nintendo-Bigstock.jpg">
+                </nav>
 
-    <!-- Begin page content -->
-    <main role="main" class="container">
-         
-      <h1 class="mt-5">Estacionamiento ISTIC</h1>
-      <p class="lead">Bienvenido a Estacionamientos Risposi Sergio!!!</p>
-
-    </main>
-      
+            </section>    
+        </main>
+    </body>        
     <footer class="footer">
     <?php
         include "componentes/pie.php";
@@ -51,5 +54,4 @@ session_start();
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-  </body>
 </html>
