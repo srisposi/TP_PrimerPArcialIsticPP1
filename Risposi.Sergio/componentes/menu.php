@@ -16,8 +16,8 @@
         <li class="nav-item">
           <a class="nav-link" href="/Risposi.Sergio/paginas/registro.php">Registrate</a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="/Risposi.Sergio/paginas/login.php">Login</a>
+        <li class="foto2">
+          <a class="../css/imagen/foto2" href="/Risposi.Sergio/paginas/login.php"><img src="../botones/login.ico"></a>
         </li>
         <?php 
         }

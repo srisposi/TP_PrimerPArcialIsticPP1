@@ -12,7 +12,10 @@
   padding: 5px;
  
 }
-
+.foto2{
+width: 10px;
+height: 10px;
+}
 /* Clase para las listas */
 .b {
   list-style-position: inside;

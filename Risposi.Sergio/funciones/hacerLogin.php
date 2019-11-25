@@ -29,13 +29,14 @@
 
 			if ($usuario["nombre"] == $usuarioIngresado) 
 			{	
-				if($usuario['estado']=='Deshabilitado')
+				$booUsuario = 1;	
+				if($usuario['estado']=="Deshabilitado")
 				{
-					header("Location: ../paginas/login.php?error=usuariodenegado");
+					header("Location: ../paginas/login.php?error=usuariodenegado");					
 				}
 				elseif ($usuario["clave"] == $claveIngresada)
 				{
-					$booUsuario = 1;			
+					$booUsuario = 2;			
 					$_SESSION['usuario']=$usuarioIngresado;
 
 					setcookie("usuario", $usuarioIngresado);				
@@ -53,7 +54,7 @@
 
 			exit();
 		}
-		else 
+		if ($booUsuario == 1)		 
 	    {
 			header("Location: ../paginas/login.php?error=contrasenaincorrecta");
 
