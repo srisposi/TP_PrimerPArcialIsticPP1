@@ -32,7 +32,8 @@
 				$booUsuario = 1;	
 				if($usuario['estado']=="Deshabilitado")
 				{
-					header("Location: ../paginas/login.php?error=usuariodenegado");					
+					header("Location: ../paginas/login.php?error=usuariodenegado");
+					exit();
 				}
 				elseif ($usuario["clave"] == $claveIngresada)
 				{

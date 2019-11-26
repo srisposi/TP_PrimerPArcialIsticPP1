@@ -49,15 +49,16 @@ session_start();
            {
               switch($_GET['error'])
               {
+                case "usuariodenegado":
+                  echo ('<p>No estas habilitado a entrar.</p>');
+                  break;
                 case "contrasenaincorrecta":
                   echo ('<p>La contraseña es incorrecta.</p>');
                   break;
                 case "usuarioincorrecto":
                   echo ('<p>El usuario no existe.</p>');
                   break;
-                case "usuariodenegado":
-                  echo ('<p>No estas habilitado a entrar.</p>');
-                  break;
+                
               }
             } 
             elseif (isset($_SESSION['usuario'])) 
