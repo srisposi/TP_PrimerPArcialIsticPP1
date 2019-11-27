@@ -14,9 +14,9 @@ $consulta =$objetoAccesoDato->RetornarConsulta($consultaSQL);
 $consulta->execute();	
 $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-if(!isset($datos[0]['patente']))
+if(!isset($datos['patente']))
 	{
-		$select="INSERT INTO factura(patente, fechaIngreso) VALUES ('$miObjeto->patente','$fechaIngreso')";		
+		$select="INSERT INTO factura(patente, fechaIngreso) VALUES ('AAA333','$fechaIngreso')";		
 		$consulta =$objetoAccesoDato->RetornarConsulta($select);		
 		$consulta->execute();
 		

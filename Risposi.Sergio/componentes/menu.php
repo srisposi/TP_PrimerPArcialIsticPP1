@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-danger">
   <a class="navbar-brand" href="#">Sergio Risposi</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-iconx|"></span>
@@ -17,7 +17,7 @@
           <a class="nav-link" href="/Risposi.Sergio/paginas/registro.php">Registrate</a>
         </li>
         <li class="nav-item">
-        <nav class="navbar navbar-light bg-dark">
+        <nav class="navbar navbar-light bg-danger">
         <a class="navbar-brand" href="/Risposi.Sergio/paginas/login.php">
         <img src="../botones/login.png" width="30" height="30" alt="">Login
         </a>
@@ -51,10 +51,10 @@
             ?>
            
             <li class="nav-item">
-              <a class="nav-link" href="/Risposi.Sergio/paginas/historicoVehiculos.php">Historial Vehiculos</a>
+              <a class="nav-link" href="Risposi.Sergio/paginas/historicoVehiculos.php">Historial Vehiculos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Risposi.Sergio/paginas/historicoEmpleados.php">Historial Empleados</a>
+              <a class="nav-link" href="Risposi.Sergio/paginas/historicoEmpleados.php">Historial Empleados</a>
             </li>
 
             <?php 

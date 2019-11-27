@@ -53,7 +53,7 @@ session_start();
         ?>
 
       </div>     
-        <input type="text" name="inputPatente" class="form-control" placeholder="Usuario" required autofocus>
+        <input type="text" name="inputPatente" class="form-control" pattern="([A-ZÑ]{3}\d{3}|[A-ZÑ]{2}\d{3}[A-ZÑ{2}])$" placeholder="AAA111 o AA123AA" required autofocus>
         
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
