@@ -28,6 +28,15 @@ session_start();
         include "../componentes/menu.php";
     ?>
     </header>
+      <div class="container">
+        <h1>Bienvenido al Registro</h1>
+        <p class="font-weight-bold">Ingrese sus datos para poder ingresar</p>
+        <p class="font-weight-bolder">El estacionamiento Mario lo espera</p>
+        <p class="font-weight-normal">Con solo nombre y clave</p>
+        <p class="font-weight-light">disfrutara de esta gran aventura</p>
+        <p class="font-weight-lighter">Gracias</p>
+        <p class="font-italic">y buen aparcamiento</p>
+      </div>
 
     <!-- Begin page content -->
     <main role="main" class="container">

@@ -95,6 +95,21 @@ session_start();
           }          
 
         ?>
+        <form action="../funciones/hacerCSV.php" class="form-signin">
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Obtener CSV</button>
+
+        <?php if(isset($_GET['exitoCSV'])&&$_GET['exitoCSV']=="exitoCSV")
+        {
+          echo "Archivo CSV generado";
+        }
+        else
+        {
+          echo "Archivo CSV NO generado";
+        }
+
+        ?>
+
+      </form>
  	    </main>
     </body>
     <footer class="footer">

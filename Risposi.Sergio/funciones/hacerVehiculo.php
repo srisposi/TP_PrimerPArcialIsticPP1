@@ -8,29 +8,31 @@ $fechaIngreso = mktime();
 
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 //Hago consulta primero para no repetir vehiculos
-$consultaSQL="select patente from factura where patente='$miObjeto->patente' ";
+$consultaSQL="SELECT patente from factura where patente='$miObjeto->patente' ";
 
 $consulta =$objetoAccesoDato->RetornarConsulta($consultaSQL);
 $consulta->execute();	
 $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-if(!isset($datos['patente']))
-	{
-		$select="INSERT INTO factura(patente, fechaIngreso) VALUES ('AAA333','$fechaIngreso')";		
-		$consulta =$objetoAccesoDato->RetornarConsulta($select);		
-		$consulta->execute();
-		
-		$selectdos="INSERT INTO historicoVehiculos (patente, fechaIngreso) VALUES ('$miObjeto->patente','$fechaIngreso')";		
-		$consulta =$objetoAccesoDato->RetornarConsulta($selectdos);		
-		$consulta->execute();
 
-		header("Location: ../paginas/ingresarVehiculo.php?exito=exito");
+		if(!isset($datos[0]['patente']))
+			{	
+				$select="INSERT INTO factura(patente, fechaIngreso) VALUES ('$miObjeto->patente','$fechaIngreso')";		
+				$consulta =$objetoAccesoDato->RetornarConsulta($select);		
+				$consulta->execute();
+				
+				$selectdos="INSERT INTO historicoVehiculos (patente, fechaIngreso) VALUES ('$miObjeto->patente','$fechaIngreso')";		
+				$consulta =$objetoAccesoDato->RetornarConsulta($selectdos);		
+				$consulta->execute();
 
-	}
-	else
-	{
-		header("Location: ../paginas/ingresarVehiculo.php?exito=repetido");
-	}	
+				header("Location: ../paginas/ingresarVehiculo.php?exito=exito");
+
+		}
+		else
+		{
+			header("Location: ../paginas/ingresarVehiculo.php?exito=repetido");
+		}	
+
 /*
 if($consultaSQL==[0])
 {

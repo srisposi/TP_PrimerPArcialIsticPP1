@@ -17,9 +17,7 @@ include "../funciones/AccesoDatos.php";
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="../css/sticky-footer-navbar.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="../css/floating-labels.css" rel="stylesheet">
-
+    
   </head>
 
   <body>
@@ -53,7 +51,10 @@ include "../funciones/AccesoDatos.php";
               $aPagar = $_GET['cobrar'];
               $ingreso = $_GET['ingreso'];
               $salida = $_GET['salida'];
-              
+            ?>  
+
+
+            <?php
               //$estadia = $_GET['estadia'];
               echo "<p>Fecha de ingreso: ".date("d-m-y H:i",$ingreso)."</p><br>";
               echo "<p>Fecha de salida: ".date("d-m-y H:i",$salida)."</p><br>";
@@ -73,13 +74,9 @@ include "../funciones/AccesoDatos.php";
          </main>   
         </nav>
 
-        <article>
-          <table>
-          <tr>
-            <th>Patente</th>
-            <th>Fecha/Hora Ingreso</th>
-          </tr>  
-
+        
+          <article>
+            
 
           <?php 
 
@@ -90,21 +87,34 @@ include "../funciones/AccesoDatos.php";
 //var_dump($datos);
 //die();
 
+            ?>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Patente</th>
+                  <th scope="col">Fecha de Ingreso</th>         
+                </tr>
+              </thead>
 
-          foreach ($datos as $vehiculo) 
-            {
+        <?php
 
+          foreach ($datos as $factura) 
+            {?>
 
-            echo "<tr>";
-            echo "<td>".$vehiculo['patente']."</td>   
-                  <td>".$vehiculo["fechaIngreso"]."</td>";   
-            echo "</tr>";
-            }
              
+              <tbody>
+                <tr>
 
-          ?>  
+                  <td><?php echo $factura['patente'];?></td>
+                  <td><?php echo $factura["fechaIngreso"];?></td>
+                </tr>
+            <?php
+            }
+            ?>  
 
-</table>
+        </tbody>
+     </table>
+
 
     </article>    
 
